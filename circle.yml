@@ -1,0 +1,19 @@
+machine:
+  pre:
+    - curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
+  node:
+    version: 0.12
+
+dependencies:
+  pre:
+    - sudo apt-get install jq
+
+deployment:
+  git_tag:
+    branch: master
+    commands:
+      - git config --global user.email "spain+circleci@livesafemobile.com"
+      - git config --global user.name "Circle CI"
+      - echo `jq -r '.version' package.json`
+      - git tag -am "`jq -r '.version' package.json`" `jq -r '.version' package.json`
+      - git push --tags

@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '0.12'
+- '0.10'
+- 'iojs'
+notifications:
+  flowdock:
+    secure: "jq8j7TC3fS5h+MpLmlfiVdx34y1bTiRrz0Q3PkViCgdFfIxRXhusGCtVuQtqdWfiwSzh56prXGV91Tc47mwHpIQivhzFo+7mtwLmtvdrBjZVXiava07DBa1Yjs5azn2gM95IV0EJ6IJGc4dhocNdDg+CAHlHPysf/6IC/OlQCG0="
+deploy:
+  provider: npm
+  email: mc.s.pain.how.er+npm@gmail.com
+  api_key:
+    secure: "Y9hv/9Dr9rdjiD0JAcwqAL+2S/CvIHRZHiQ27iHBhMa9ImkXAd4+hjSFIwwaICheV5IBGikMlGlmVb+ZitmagTrzATus313RGtQLtKVVsF91ifFizHTPdivnU5MFAwZv0YXFB9gr4bOr34/ha8AO5bR4IzSXLd5+Oh8w/FxILho="
+  on:
+    tags: true
+    all_branches: true
+    repo: LiveSafe/gulp-html5-lint
