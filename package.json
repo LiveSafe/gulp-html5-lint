@@ -1,6 +1,6 @@
 {
   "name": "gulp-html5-lint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "gulp plugin for html5-lint",
   "main": "lib/gulp-html5-lint.js",
   "scripts": {
@@ -25,8 +25,8 @@
   "homepage": "https://github.com/LiveSafe/gulp-html5-lint",
   "devDependencies": {
     "chai": "^2.1.1",
-    "chai-as-promised": "^4.2.0",
-    "event-stream": "^3.2.2",
+    "chai-as-promised": "^4.3.0",
+    "event-stream": "^3.3.0",
     "gulp": "^3.8.11",
     "lvsf-gulp-tasks": "^1.1.0",
     "sinon": "^1.13.0",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "gulp-util": "^3.0.4",
-    "html5-lint": "^0.2.3",
+    "html5-lint": "^0.2.4",
     "ls-lodash": "^2.2.2",
     "through2": "^0.6.3"
   }
