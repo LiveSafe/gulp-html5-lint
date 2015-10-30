@@ -7,7 +7,8 @@ var fs = require('fs'),
     gutil = require('gulp-util'),
     gulpHtml5Lint = require('../'),
     console = require('console'),
-    expect = require('./test-helper').expect;
+    expect = require('./test-helper').expect,
+    sinon = require('sinon');
 
 describe('gulp-html5-lint', function() {
     function makeTestContext(fixtureName) {
@@ -59,5 +60,48 @@ describe('gulp-html5-lint', function() {
 
         stream.write(context.gutilFile);
         stream.end();
+    });
+
+    describe('API down', function() {
+        var invalidURL = 'http://invalid-website.v';
+
+        function generateTest(lintOpts, onData, onError) {
+            var stream = gulpHtml5Lint(lintOpts),
+                context = makeTestContext('valid');
+
+            stream.on('error', onError);
+            stream.on('data', onData);
+
+            stream.write(context.gutilFile);
+            stream.end();
+        }
+
+        it('should log a warning by default when dependency website is down', function(done) {
+            sinon.spy(gutil, 'log');
+            generateTest(
+                {apiCheck: {website: invalidURL}},
+                function() {
+                    sinon.assert.calledOnce(gutil.log);
+                    sinon.assert.calledWith(gutil.log, 'HTML lint API is DOWN. Skipping linting.');
+                    gutil.log.restore();
+                    done();
+                },
+                function() {
+                    throw new Error('Should not error out.');
+                }
+            );
+        });
+
+        it('should error out when dependency website is down and triggerError is set', function(done) {
+            generateTest(
+                {apiCheck: {website: invalidURL, triggerError: true}},
+                function() {
+                    throw new Error('Should not receive data.');
+                },
+                function() {
+                    done();
+                }
+            );
+        });
     });
 });
