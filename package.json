@@ -4,6 +4,7 @@
   "description": "gulp plugin for html5-lint",
   "main": "lib/gulp-html5-lint.js",
   "scripts": {
+    "release": "./do-release.sh",
     "test": "./node_modules/gulp/bin/gulp.js test"
   },
   "repository": {
