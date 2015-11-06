@@ -1,8 +1,10 @@
 language: node_js
 node_js:
-- '0.12'
 - '0.10'
-- 'iojs'
+- '0.12'
+- '4.0'
+- '4.1'
+- '4.2'
 notifications:
   flowdock:
     secure: "jq8j7TC3fS5h+MpLmlfiVdx34y1bTiRrz0Q3PkViCgdFfIxRXhusGCtVuQtqdWfiwSzh56prXGV91Tc47mwHpIQivhzFo+7mtwLmtvdrBjZVXiava07DBa1Yjs5azn2gM95IV0EJ6IJGc4dhocNdDg+CAHlHPysf/6IC/OlQCG0="
