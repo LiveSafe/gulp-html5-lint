@@ -29,13 +29,14 @@
     "event-stream": "^3.3.0",
     "gulp": "^3.8.11",
     "lvsf-gulp-tasks": "^1.1.0",
-    "sinon": "^1.13.0",
+    "sinon": "^1.17.2",
     "sinon-chai": "^2.7.0"
   },
   "dependencies": {
     "gulp-util": "^3.0.4",
     "html5-lint": "^0.2.4",
     "ls-lodash": "^2.2.2",
+    "sync-request": "^2.1.0",
     "through2": "^0.6.3"
   }
 }
