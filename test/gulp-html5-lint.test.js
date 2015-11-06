@@ -6,11 +6,14 @@ var fs = require('fs'),
     _ = require('ls-lodash'),
     gutil = require('gulp-util'),
     gulpHtml5Lint = require('../'),
+    moment = require('moment'),
     console = require('console'),
     expect = require('./test-helper').expect,
     sinon = require('sinon');
 
 describe('gulp-html5-lint', function() {
+    this.timeout(moment.duration(12, 'seconds').asMilliseconds());
+
     function makeTestContext(fixtureName) {
         var fileContents = fs.readFileSync(path.join(__dirname, 'fixtures', 'valid.html')),
             fileContentsString = String(fileContents),

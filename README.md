@@ -25,6 +25,11 @@ gulp.task('html5-lint', function() {
 
 Options are those you would provide to https://github.com/mozilla/html5-lint
 
+Additional options include:
+
+* `apiCheck.timeout` {_number_} request timeout to check if html5 lint API is available (__default: 10 seconds__)
+* `apiCheck.triggerError` {_boolean_} timeout on request to check whether html5 lint API is available (__default: false__)
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
